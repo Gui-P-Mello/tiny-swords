@@ -1,0 +1,86 @@
+[gd_scene load_steps=10 format=3 uid="uid://bhjqwrk6kftl6"]
+
+[ext_resource type="Texture2D" uid="uid://ch71h1ngc5psf" path="res://addons/Tiny Swords (Update 010)/UI/Banners/Banner_Horizontal.png" id="1_drcne"]
+[ext_resource type="Script" path="res://ui/game_ui.gd" id="1_dsd6q"]
+[ext_resource type="Texture2D" uid="uid://colh47h8ptorb" path="res://addons/Tiny Swords (Update 010)/Resources/Resources/M_Idle_(NoShadow).png" id="3_7eyg5"]
+
+[sub_resource type="SystemFont" id="SystemFont_qt71a"]
+font_names = PackedStringArray("Cascadia Code")
+
+[sub_resource type="LabelSettings" id="LabelSettings_v0kvy"]
+font = SubResource("SystemFont_qt71a")
+font_size = 24
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0ri0g"]
+texture = ExtResource("1_drcne")
+texture_margin_left = 36.0
+texture_margin_top = 22.8038
+texture_margin_right = 40.0981
+texture_margin_bottom = 53.4641
+region_rect = Rect2(32.8212, 44.4328, 127.679, 130.067)
+
+[sub_resource type="SystemFont" id="SystemFont_sl7we"]
+font_names = PackedStringArray("Cascadia Code")
+
+[sub_resource type="LabelSettings" id="LabelSettings_ryqah"]
+font = SubResource("SystemFont_sl7we")
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2hrfs"]
+atlas = ExtResource("3_7eyg5")
+region = Rect2(40, 56, 56, 40)
+
+[node name="GameUI" type="CanvasLayer"]
+script = ExtResource("1_dsd6q")
+
+[node name="TimerLabel" type="Label" parent="."]
+unique_name_in_owner = true
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -33.5
+offset_right = 33.5
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "10:30"
+label_settings = SubResource("LabelSettings_v0kvy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel2" type="Panel" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -253.0
+offset_right = -4.0
+offset_bottom = 95.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_0ri0g")
+
+[node name="MeatLabel" type="Label" parent="Panel2"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -15.0
+offset_top = -29.5
+offset_right = 85.0
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "50"
+label_settings = SubResource("LabelSettings_ryqah")
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Panel2"]
+layout_mode = 0
+offset_left = 69.0
+offset_top = 5.0
+offset_right = 197.0
+offset_bottom = 133.0
+scale = Vector2(0.434761, 0.434761)
+texture = SubResource("AtlasTexture_2hrfs")
